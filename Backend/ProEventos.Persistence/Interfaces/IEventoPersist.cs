@@ -7,9 +7,9 @@ using System.Threading.Tasks;
 
 namespace ProEventos.Persistence.Interfaces
 {
-    public interface IEvento : IBasePersist
+    public interface IEventoPersist : IBasePersist
     {
-        Task<Evento[]> GetAllEventosAsync(bool includePalestrantes = false);
+        Task<List<Evento>> GetAllEventosAsync(bool includePalestrantes = false);
         Task<Evento> GetEventoByIdAsync(int eventoId, bool includePalestrantes = false);
     }
 }

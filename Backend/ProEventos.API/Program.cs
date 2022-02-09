@@ -1,5 +1,9 @@
 using Microsoft.EntityFrameworkCore;
+using ProEventos.Application.Interfaces;
+using ProEventos.Application.Services;
+using ProEventos.Persistence;
 using ProEventos.Persistence.Context;
+using ProEventos.Persistence.Interfaces;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -9,6 +13,10 @@ builder.Services.AddDbContext<DataContext>(options =>
     options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection"));
 });
 builder.Services.AddControllers();
+
+builder.Services.AddScoped<IEventoService, EventoService>();
+builder.Services.AddScoped<IEventoPersist, EventoPersist>();
+
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
