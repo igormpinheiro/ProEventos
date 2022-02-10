@@ -36,4 +36,6 @@ To get more help on the Angular CLI use `ng help` or go check out the [Angular C
 > npm install bootstrap
  
 >ng add ngx-bootstrap  --component collapse
-
+>npm install ngx-toastr --save
+>npm install @angular/animations --save
+>npm install ngx-spinner --save
