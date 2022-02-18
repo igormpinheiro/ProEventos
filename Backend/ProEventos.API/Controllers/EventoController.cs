@@ -36,7 +36,7 @@ public class EventoController : ControllerBase
     }
 
     [HttpGet("{id}")]
-    public async Task<ActionResult<Evento>> GetById(int id)
+    public async Task<ActionResult<EventoDTO>> GetById(int id)
     {
         try
         {
